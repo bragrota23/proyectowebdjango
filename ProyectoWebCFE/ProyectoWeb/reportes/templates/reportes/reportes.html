@@ -1,0 +1,42 @@
+{% extends 'ProyectoWebApp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    {% for reporte in reportes %}
+
+    <section class="page-section clearfix">
+        <div class="container">
+          <div class="intro">
+
+            {% if user.is_authenticated %}
+
+              <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{reporte.imagen.url}}" alt="" style="width:53%;">
+              <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+              <h2 class="section-heading mb-4" >
+              <span class="section-heading-lower">{{reporte.titulo}}</span> 
+              <span class="section-heading-upper">{{reporte.contenido}}</span>
+
+                {% if reporte.archivo_cotidiano %}
+                  <p><a class="btn btn-success"  href="../../../media/archivos_cotidianos/Equipos_exp.xlsx" >Descargar reporte cotidiano EPROSEC</a></p>
+                {% endif %}
+
+                {% if reporte.archivo_mensual %}
+                  <p><a class="btn btn-success"  href="../../../media/archivos_mensuales/equipos_men_exp.xlsx">Descargar reporte mensual EPROSEC</a></p>
+                {% endif %}
+
+            {% endif %}
+
+                <!--../../../media/archivos-->
+                <!--<a href="../../../media/archivos/equipos_men_exp.xlsx" download="reportes.xlsx">Descargar reporte EPROSEC</a>-->
+              </h2>
+             
+            </div>
+          </div>
+        </div>
+      </section>
+
+    {% endfor %}
+
+{% endblock %}

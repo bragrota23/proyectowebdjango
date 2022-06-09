@@ -1,0 +1,66 @@
+{% extends 'ProyectoWebApp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+   <!-- Heading Misión -->
+   <section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+
+      {% if user.is_authenticated %}
+
+        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'ProyectoWebApp/img/Principal.jpg'%}" alt="">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4" >
+            <span class="section-heading-lower">Misión</span>
+          </h2>
+          <p class="mb-3">Suministrar insumos y bienes energéticos requeridos para el desarrollo productivo y social del país de forma eficiente, sustentable, económica e incluyente, mediante una política que priorice la seguridad y la soberanía energética nacional y fortalezca el servicio público de electricidad.
+          </p>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Heading Visión -->
+  <section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'ProyectoWebApp/img/Vision.jpg'%}" alt="">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4" > 
+            <span class="section-heading-lower">Visión</span>
+          </h2>
+          <p class="mb-3">Consolidarnos como la empresa de energía líder en México, con solvencia técnica y financiera, que procura el fortalecimiento de nuestro capital humano y garantiza el servicio de energía eléctrica con calidad y sentido social a nuestros clientes en todos los segmentos del mercado, para contribuir al desarrollo sustentable del país, generando valor económico y rentabilidad al Estado Mexicano.
+          </p>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  
+    <!-- Message -->
+    <section class="page-section cta">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner text-center rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper">Desarrollo social garantizado</span>
+                <span class="section-heading-lower">Compromiso total</span>
+              </h2>
+              <p class="mb-0">La Comisión Federal de Electricidad atiende su compromiso institucional con el desarrollo social de manera transparente, honesta, eficiente, con sentido de equidad y responsabilidad social y ambiental, procurando el mejoramiento de la productividad con sustentabilidad, para minimizar los costos de la industria eléctrica en beneficio de la población y contribuir al desarrollo nacional.</p>
+            </div>
+          </div>
+
+      {% endif %}
+
+        </div>
+      </div>
+    </section>
+
+{% endblock %}
